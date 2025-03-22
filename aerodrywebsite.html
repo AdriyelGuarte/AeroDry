@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project AeroDry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f7fb;
+            color: #333;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #4a90e2;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        nav .logo h1 {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background-color 0.3s, transform 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: #3578e5;
+            transform: scale(1.05);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 20px;
+            margin-top: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        section p {
+            text-align: justify;
+            color: #555;
+            font-size: 22px;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .image-container img {
+            width: 45%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-container {
+            width: 50%;
+        }
+
+        /* Creators Section */
+        #creators {
+            background-color: #e9f2fc;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #creators h2 {
+            color: #2c3e50;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        #creators .image-container {
+            margin-bottom: 30px;
+        }
+
+        #creators .image-container img {
+            width: 60%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #creators ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #creators ul li {
+            font-size: 20px;
+            color: #555;
+            margin: 10px 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Functions Section */
+        #functions {
+            padding: 100px 20px;
+            margin-top: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #functions h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        #functions p {
+            text-align: justify;
+            color: #555;
+            font-size: 22px;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        #functions ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+
+        #functions ul li {
+            margin-bottom: 15px;
+        }
+
+        #functions ul li strong {
+            color: #4a90e2;
+            font-size: 24px;
+        }
+
+        /* Mobile-friendly Adjustments for Functions Section */
+        @media (max-width: 768px) {
+            #functions h2 {
+                font-size: 30px;
+            }
+
+            #functions p {
+                font-size: 18px;
+            }
+
+            #functions ul li {
+                font-size: 18px;
+            }
+
+            #functions ul li strong {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #functions h2 {
+                font-size: 28px;
+            }
+
+            #functions p {
+                font-size: 16px;
+            }
+
+            #functions ul li {
+                font-size: 16px;
+            }
+
+            #functions ul li strong {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="logo.jpg" alt="AeroDry Logo">
+            <h1>AeroDry</h1>
+        </div>
+        <ul>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#purpose">Purpose</a></li>
+            <li><a href="#functions">Functions</a></li>
+            <li><a href="#creators">Creators</a></li>
+        </ul>
+    </nav>
+
+    <!-- Description Section -->
+    <section id="description">
+        <h2>Description of AeroDry</h2>
+        <div class="image-container">
+            <img src="aerodry.jpg" alt="Aerodry Image">
+            <div class="text-container">
+                <p>
+                    Drying clothes has always been a tedious chore for everyone. From the very start, people used the natural flow of air to dry their clothes. Unfortunately, it is not so efficient since rain often stops the drying process. Since then, dryer machines have been invented, but they are costly and use a significant amount of electricity. That is why our team decided to create a device that can use the natural flow of air to our advantage and be safe from the risk of clothes getting wet from rain. Not only that, it also dries the clothes and collects them automatically. This innovative device is called “AeroDry”.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purpose Section -->
+    <section id="purpose">
+        <h2>Purpose of AeroDry</h2>
+        <div class="image-container">
+            <img src="significance.jpg" alt="AeroDry Purpose">
+            <div class="text-container">
+                <p>
+                    This project's purpose is to make people's lives easier when it comes to housework. People don't need to run in panic when it suddenly starts to rain because AeroDry can automatically retract the clothes to a dry place and ensure they won’t get wet. It aims to lighten the burden of laundry, with its functionality still doing its duty and not hindering the actual housework of a person. The product can be connected via smartphones, making the whole automatic retracting process fun and stress-relieving.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Functions Section -->
+    <section id="functions">
+        <h2>Functions of AeroDry</h2>
+        <div class="image-container">
+            <img src="functions.jpg" alt="AeroDry Functions">
+            <div class="text-container">
+                <p>
+                    AeroDry is an innovative drying system designed to efficiently dry clothes using the natural flow of air with no risk of getting wet from unexpected weather changes. The project is built around an Arduino UNO microcontroller, which serves as the brain of the system. It is programmed using C++ through the Arduino IDE to control various functions of the device.
+                </p>
+                <p>
+                    AeroDry operates through a three-step system, known as R.A.S., which stands for RainGuard, AeroBoost, and SafeCollect:
+                </p>
+                <ul>
+                    <li><strong>RainGuard</strong>: AeroDry detects rain and retracts the clothes into a safe, dry space with an LED indicator.</li>
+                    <li><strong>AeroBoost</strong>: The system dries the clothes automatically with the use of a fan for a set amount of time.</li>
+                    <li><strong>SafeCollect</strong>: AeroDry features an automatic cloth collector, using a claw to collect the clothes when they're dried.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creators Section -->
+    <section id="creators">
+        <h2>Meet the Creators</h2>
+        <div class="image-container">
+            <img src="people.jpg" alt="Creators Image">
+        </div>
+        <ul>
+            <li>Agno, Brent Emmanuel</li>
+            <li>Ajesta, Jericho Perry</li>
+            <li>Cayabyab, Azalea</li>
+            <li>Cheng, Matthew Louis</li>
+            <li>Conwi, Dustin Chace</li>
+            <li>Delos Reyes, Jacel</li>
+            <li>Domingo, Janella</li>
+            <li>Exaltacion, Joyce Anne</li>
+            <li>Guarte, Adriyel Josef L.</li>
+            <li>Guillera, Ronnie Mar</li>
+            <li>Mariano, Czarina</li>
+            <li>Rotoni, Hannah Gweneth</li>
+            <li>San Jose, Antonette</li>
+            <li>Servan, Myco</li>
+            <li>Valenciano, Lanijoy</li>
+            <li>Villamater, Albert</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 AeroDry Project. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
